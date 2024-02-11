@@ -23,3 +23,15 @@ header {
   justify-content: space-between;
   padding: 1%;
 }
+
+main {
+  padding: 16px;
+  height: 85vh;
+  
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
