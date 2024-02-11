@@ -1,6 +1,6 @@
 :root {
   --text-color: #000000;
-  --accent-color: #DC5F00;
+  --accent-color: #ea6f10;
   --bg-color: #CF0A0A;
   --white: #EEEEEE;
 }
@@ -13,6 +13,7 @@ body {
   background: var(--bg-color);
   margin: 0px;
   height: 100vh;
+  font-family: "Bree Serif", serif;
 }
 
 header {
