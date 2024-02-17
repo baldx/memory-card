@@ -21,7 +21,7 @@ export default function Card({search, name}) {
         }
 
         fetchData();
-    }, []);
+    }, [search]);
 
 
     //https://api.giphy.com/v1/gifs/translate?api_key=7TkQTQcCKnUowWt57hE4H86f8uc73NIP&s=cats
