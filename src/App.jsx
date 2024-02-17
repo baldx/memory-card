@@ -4,22 +4,36 @@ import Card from './components/card'
 
 function App() {
 
-  /*write random gen function here*/
+  const cardsData = [
+    { search: "barry allen", name: "Flash" },
+    { search: "iris west", name: "Iris West" },
+    { search: "killer frost", name: "Caitlin Snow" },
+    { search: "Joe West", name: "Joe West" },
+    { search: "oliver queen", name: "Green Arrow" },
+    { search: "cisco ramon", name: "Vibe" },
+    { search: "Wentworth Miller", name: "Captain Cold" },
+    { search: "batman", name: "Batman" },
+    { search: "super girl", name: "Super Girl" },
+    { search: "dc legends of tomorrow", name: "Legends" }
+  ]
+
+  const shuffle = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]
+    }
+    return array;
+  }
+
+  const newData = shuffle(cardsData);
 
   return (
     <>
       <Header score={0} best={0} />
       <main>
-        <Card search="barry allen" name="Flash" />
-        <Card search="iris west" name="Iris West" />
-        <Card search="killer frost" name="Caitlin Snow" />
-        <Card search="Joe West" name="Joe West" />
-        <Card search="oliver queen" name="Green Arrow" />
-        <Card search="cisco ramon" name="Vibe" />
-        <Card search="Wentworth Miller" name="Captain Cold" />
-        <Card search="batman" name="Batman" />
-        <Card search="super girl" name="Super Girl" />
-        <Card search="dc legends of tomorrow" name="Legends" />
+      {newData.map((card, index) => (
+          <Card key={index} search={card.search} name={card.name} />
+        ))}
       </main>
     </>
   )
