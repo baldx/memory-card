@@ -27,11 +27,14 @@ header {
 main {
   padding: 16px;
   height: 85vh;
-  
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 1em;
 }
 
 img {
-  width: 100%;
+  width: 200px;
   object-fit: contain;
   border-radius: 10px;
 }
