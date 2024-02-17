@@ -1,6 +1,6 @@
 import './App.css'
 import Header from './components/header'
-import OnLoad from './components/card'
+import Card from './components/card'
 
 function App() {
 
@@ -8,7 +8,16 @@ function App() {
     <>
       <Header score={0} best={0} />
       <main>
-        <OnLoad />
+        <Card src={"src/assets/flashsuit.jpg"} name="Flash" />
+        <Card src={"src/assets/flashsuit.jpg"} name="Flash" />
+        <Card src={"src/assets/flashsuit.jpg"} name="Flash" />
+        <Card src={"src/assets/flashsuit.jpg"} name="Flash" />
+        <Card src={"src/assets/flashsuit.jpg"} name="Flash" />
+        <Card src={"src/assets/flashsuit.jpg"} name="Flash" />
+        <Card src={"src/assets/flashsuit.jpg"} name="Flash" />
+        <Card src={"src/assets/flashsuit.jpg"} name="Flash" />
+        <Card src={"src/assets/flashsuit.jpg"} name="Flash" />
+        <Card src={"src/assets/flashsuit.jpg"} name="Flash" />
       </main>
     </>
   )
