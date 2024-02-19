@@ -8,7 +8,7 @@ function App() {
   const [bestScore, setBestScore] = useState(0);
   let newData;
 
-  const cardsData = [
+  const initialCardsData = [
     { id: 1, clicks: 0, search: "barry allen", name: "Flash" },
     { id: 2, clicks: 0, search: "iris west", name: "Iris West" },
     { id: 3, clicks: 0, search: "killer frost", name: "Caitlin Snow" },
@@ -21,6 +21,7 @@ function App() {
     { id: 10, clicks: 0, search: "dc legends of tomorrow", name: "Legends" }
   ]
 
+  const [cardsData, setCardsData] = useState(initialCardsData);
 
   /* 
     
@@ -37,7 +38,7 @@ function App() {
     return array;
   }
 
-  const increaseScore = () => {
+  const increaseScore = (id) => {
 
     setScore(prevScore => {
       if (prevScore >= bestScore) {
@@ -47,7 +48,11 @@ function App() {
       return prevScore + 1;
     })
 
-
+    setCardsData(prevCardsData => {
+      return prevCardsData.map(card => {
+        return card.id === id ? {...card, clicks: card.clicks++} : card
+      })
+    })
   }
 
   newData = shuffle(cardsData)
@@ -57,7 +62,7 @@ function App() {
       <Header score={score} best={bestScore} />
       <main>
       {newData.map((card, index) => (
-          <Card key={index} search={card.search} name={card.name} onClick={increaseScore}/>
+          <Card key={index} search={card.search} name={card.name} onClick={() => increaseScore(card.id)}/>
         ))}
       </main>
     </>
