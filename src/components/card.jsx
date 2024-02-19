@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react"
 
 // eslint-disable-next-line react/prop-types
-export default function Card({search, name}) {
+export default function Card({search, name, onClick}) {
     
     const [gif, setGif] = useState("");
 
@@ -29,7 +29,7 @@ export default function Card({search, name}) {
 
     return (
         <>
-        <div className="card">
+        <div className="card" onClick={onClick}>
             <img src={gif} alt="" />
             <div className="name">{name}</div>
         </div>
