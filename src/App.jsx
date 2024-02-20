@@ -50,7 +50,18 @@ function App() {
 
     setCardsData(prevCardsData => {
       return prevCardsData.map(card => {
-        return card.id === id ? {...card, clicks: card.clicks++} : card
+        if (card.id === id) {
+          let updatedClicks = card.clicks++;
+
+          if (updatedClicks > 1) {
+            setScore(0);
+            return {...card, clicks: 0};
+          }
+
+          return {...card, clicks: updatedClicks };
+        }
+        return card;
+        // return card.id === id ? {...card, clicks: card.clicks++} : card
       })
     })
   }
